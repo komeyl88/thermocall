@@ -25,7 +25,7 @@ class Login extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 36),
             TextFormField(
               obscureText: true,
               decoration: InputDecoration(
@@ -39,7 +39,7 @@ class Login extends StatelessWidget {
                 suffixIcon: _buildPasswordVisibilityIcon(),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 36),
             TextFormField(
               obscureText: true,
               decoration: InputDecoration(
@@ -74,7 +74,7 @@ class Login extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: 70),
 
             Center(
               child: Text(
@@ -83,22 +83,27 @@ class Login extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 10), // Additional spacing for better layout
+            SizedBox(height: 16), // Additional spacing for better layout
 
             ElevatedButton(
               onPressed: () {}, // Handle login button press
               child: Text(
                 "Login",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black87,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black87,
+                backgroundColor: Colors.white,
                 minimumSize: Size(double.infinity, 60),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(
+                    color: Colors.black87,
+                    // Change this to your desired stroke color
+                    width: 2.0, // Adjust the width of the stroke here
+                  ),
                 ),
               ),
             ),
