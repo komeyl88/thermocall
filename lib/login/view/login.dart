@@ -72,14 +72,44 @@ class Login extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
-            )
+            ),
+
+            SizedBox(height: 20),
+
+            Center(
+              child: Text(
+                "Already have an account?",
+                style: TextStyle(color: Colors.grey),
+              ),
+            ),
+
+            SizedBox(height: 10), // Additional spacing for better layout
+
+            ElevatedButton(
+              onPressed: () {}, // Handle login button press
+              child: Text(
+                "Login",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black87,
+                minimumSize: Size(double.infinity, 60),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
+}
 
-  Widget _buildPasswordVisibilityIcon() {
+Widget _buildPasswordVisibilityIcon() {
     return GestureDetector(
       onTap: () {},
       child: Icon(
@@ -98,4 +128,3 @@ class Login extends StatelessWidget {
       ),
     );
   }
-}
