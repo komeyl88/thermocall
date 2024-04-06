@@ -12,57 +12,77 @@ class Login extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            Text(
+              "Email",
+              textAlign: TextAlign.left,
+              style: TextStyle(color: Colors.black54),
+            ),
+            SizedBox(
+              height: 16,
+            ),
             TextFormField(
               decoration: InputDecoration(
-                labelText: 'Email',
                 contentPadding: EdgeInsets.symmetric(
-                  horizontal: 30.0,
+                  horizontal: 16.0,
                 ),
                 hintText: "Enter your email",
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(10),
                   borderSide: BorderSide(color: Colors.grey),
                 ),
               ),
             ),
-            SizedBox(height: 36),
+            SizedBox(height: 32),
+            Text(
+              "Create Password",
+              textAlign: TextAlign.left,
+              style: TextStyle(color: Colors.black54),
+            ),
+            SizedBox(
+              height: 16,
+            ),
             TextFormField(
               obscureText: true,
               decoration: InputDecoration(
-                labelText: 'Create Password',
-                contentPadding: EdgeInsets.symmetric(horizontal: 30.0),
+                contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
                 hintText: "Enter your password",
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(10),
                   borderSide: BorderSide(color: Colors.grey),
                 ),
                 suffixIcon: _buildPasswordVisibilityIcon(),
               ),
             ),
-            SizedBox(height: 36),
+            SizedBox(height: 32),
+            Text(
+              "Repeat Password",
+              textAlign: TextAlign.left,
+              style: TextStyle(color: Colors.black54),
+            ),
+            SizedBox(
+              height: 16,
+            ),
             TextFormField(
               obscureText: true,
               decoration: InputDecoration(
-                labelText: 'Repeat Password',
                 contentPadding: EdgeInsets.symmetric(
-                  horizontal: 30.0,
+                  horizontal: 16.0,
                 ),
                 hintText: "Repeat your password",
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(10),
                   borderSide: BorderSide(color: Colors.grey),
                 ),
-                suffixIcon: _buildRepeatPasswordVisibilityIcon(),
+                suffixIcon: _buildPasswordVisibilityIcon(),
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 32),
             ElevatedButton(
               onPressed: () {},
               child: Text(
                 "Register",
                 style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
+                  color: Colors.white70,
                 ),
               ),
               style: ElevatedButton.styleFrom(
@@ -74,12 +94,12 @@ class Login extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 70),
+            SizedBox(height: 100),
 
             Center(
               child: Text(
                 "Already have an account?",
-                style: TextStyle(color: Colors.grey),
+                style: TextStyle(color: Colors.black54),
               ),
             ),
 
@@ -101,12 +121,14 @@ class Login extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   side: BorderSide(
                     color: Colors.black87,
-                    // Change this to your desired stroke color
-                    width: 2.0, // Adjust the width of the stroke here
+                    width: 2.0,
                   ),
                 ),
               ),
             ),
+            SizedBox(
+              height: 32,
+            )
           ],
         ),
       ),
@@ -115,21 +137,11 @@ class Login extends StatelessWidget {
 }
 
 Widget _buildPasswordVisibilityIcon() {
-    return GestureDetector(
-      onTap: () {},
-      child: Icon(
-        Icons.visibility,
-        color: Colors.grey,
-      ),
-    );
-  }
-
-  Widget _buildRepeatPasswordVisibilityIcon() {
-    return GestureDetector(
-      onTap: () {},
-      child: Icon(
-        Icons.visibility,
-        color: Colors.grey,
-      ),
-    );
-  }
+  return GestureDetector(
+    onTap: () {},
+    child: Icon(
+      Icons.visibility,
+      color: Colors.grey,
+    ),
+  );
+}
