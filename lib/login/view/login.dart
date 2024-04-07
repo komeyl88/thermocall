@@ -1,25 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:thermocall/login/view/signup.dart';
 
-class Login extends StatelessWidget {
-  const Login({Key? key});
+class Login extends StatefulWidget {
+  const Login({Key? key}) : super(key: key);
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  bool _obscureText = true;
+
+  Widget _buildPasswordVisibilityIcon() {
+    return IconButton(
+      icon: Icon(_obscureText ? Icons.visibility_off : Icons.visibility),
+      onPressed: () => setState(() => _obscureText = !_obscureText),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Login'),
+      ),
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              "Email",
+            const Text(
+              'Email',
               textAlign: TextAlign.left,
-              style: TextStyle(color: Colors.black54),
+              style: TextStyle(
+                color: Colors.black54,
+                fontSize: 16.0,
+              ),
             ),
-            SizedBox(
-              height: 16,
-            ),
+            const SizedBox(height: 16.0),
             TextFormField(
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.symmetric(
@@ -32,116 +50,90 @@ class Login extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 32),
-            Text(
-              "Create Password",
+            const SizedBox(height: 32.0),
+            const Text(
+              'Password',
               textAlign: TextAlign.left,
-              style: TextStyle(color: Colors.black54),
+              style: TextStyle(
+                color: Colors.black54,
+                fontSize: 16.0,
+              ),
             ),
-            SizedBox(
-              height: 16,
-            ),
+            const SizedBox(height: 16.0),
             TextFormField(
-              obscureText: true,
+              obscureText: _obscureText,
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
-                hintText: "Enter your password",
+                contentPadding: const EdgeInsets.symmetric(horizontal: 16.0),
+                hintText: 'Enter your password',
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(10.0),
                   borderSide: BorderSide(color: Colors.grey),
                 ),
                 suffixIcon: _buildPasswordVisibilityIcon(),
               ),
             ),
-            SizedBox(height: 32),
-            Text(
-              "Repeat Password",
-              textAlign: TextAlign.left,
-              style: TextStyle(color: Colors.black54),
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            TextFormField(
-              obscureText: true,
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(
-                  horizontal: 16.0,
-                ),
-                hintText: "Repeat your password",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                suffixIcon: _buildPasswordVisibilityIcon(),
+            const SizedBox(height: 16.0),
+            const Text(
+              'Forgot password?',
+              style: TextStyle(
+                color: Colors.blueAccent,
+                fontSize: 14.0,
               ),
+              textAlign: TextAlign.right,
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32.0),
             ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                "Register",
+              onPressed: () async {
+                // Implement login logic here
+                // (form validation, API call, etc.)
+              },
+              child: const Text(
+                'Login',
                 style: TextStyle(
                   color: Colors.white70,
-                ),
-              ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black87,
-                minimumSize: Size(double.infinity, 60),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-            ),
-
-            SizedBox(height: 100),
-
-            Center(
-              child: Text(
-                "Already have an account?",
-                style: TextStyle(color: Colors.black54),
-              ),
-            ),
-
-            SizedBox(height: 16), // Additional spacing for better layout
-
-            ElevatedButton(
-              onPressed: () {}, // Handle login button press
-              child: Text(
-                "Login",
-                style: TextStyle(
-                  color: Colors.black87,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                minimumSize: Size(double.infinity, 60),
+                backgroundColor: Colors.black87,
+                minimumSize: const Size(double.infinity, 60.0),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  side: BorderSide(
-                    color: Colors.black87,
-                    width: 2.0,
-                  ),
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
             ),
-            SizedBox(
-              height: 32,
-            )
+            const SizedBox(height: 100.0),
+            Center(
+              child: const Text(
+                "Don't have a account?",
+                style: TextStyle(color: Colors.black54),
+              ),
+            ),
+            const SizedBox(height: 16.0),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Signup()),
+                );
+              },
+              child: const Text(
+                "Register",
+                style: TextStyle(
+                    color: Colors.black87, fontWeight: FontWeight.bold),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                minimumSize: const Size(double.infinity, 60.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  side: const BorderSide(color: Colors.black87, width: 2.0),
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
-}
-
-Widget _buildPasswordVisibilityIcon() {
-  return GestureDetector(
-    onTap: () {},
-    child: Icon(
-      Icons.visibility,
-      color: Colors.grey,
-    ),
-  );
 }
