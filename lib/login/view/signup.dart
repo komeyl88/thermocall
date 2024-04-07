@@ -116,13 +116,6 @@ class Signup extends StatelessWidget {
                   ),
                 );
               },
-              child: Text(
-                "Login",
-                style: TextStyle(
-                  color: Colors.black87,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
                 minimumSize: Size(double.infinity, 60),
@@ -132,6 +125,13 @@ class Signup extends StatelessWidget {
                     color: Colors.black87,
                     width: 2.0,
                   ),
+                ),
+              ),
+              child: const Text(
+                "Login",
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
