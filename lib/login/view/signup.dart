@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'login.dart';
 
 class Signup extends StatelessWidget {
+  const Signup({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,17 +112,10 @@ class Signup extends StatelessWidget {
                 final result = await Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Login(),
+                    builder: (context) => const Login(),
                   ),
                 );
               },
-              child: Text(
-                "Login",
-                style: TextStyle(
-                  color: Colors.black87,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
                 minimumSize: Size(double.infinity, 60),
@@ -130,6 +125,13 @@ class Signup extends StatelessWidget {
                     color: Colors.black87,
                     width: 2.0,
                   ),
+                ),
+              ),
+              child: const Text(
+                "Login",
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
