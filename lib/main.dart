@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'login/view/login.dart';
+import 'login/view/signup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Login(),
+      home: Signup(),
     );
   }
 }
