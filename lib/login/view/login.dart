@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:thermocall/login/view/inputemail.dart';
 import 'package:thermocall/login/view/inputpassword.dart';
-import 'package:thermocall/login/view/signup.dart         ';
+import 'package:thermocall/login/view/signup.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
