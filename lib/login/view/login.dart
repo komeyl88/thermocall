@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:thermocall/login/view/inputemail.dart';
+import 'package:thermocall/login/view/inputpassword.dart';
 import 'package:thermocall/login/view/signup.dart         ';
 
 class Login extends StatefulWidget {
@@ -38,18 +40,7 @@ class _LoginState extends State<Login> {
               ),
             ),
             const SizedBox(height: 16.0),
-            TextFormField(
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(
-                  horizontal: 16.0,
-                ),
-                hintText: "Enter your email",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-              ),
-            ),
+            InputEmail(),
             const SizedBox(height: 32.0),
             const Text(
               'Password',
@@ -60,18 +51,7 @@ class _LoginState extends State<Login> {
               ),
             ),
             const SizedBox(height: 16.0),
-            TextFormField(
-              obscureText: _obscureText,
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.symmetric(horizontal: 16.0),
-                hintText: 'Enter your password',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                suffixIcon: _buildPasswordVisibilityIcon(),
-              ),
-            ),
+            InputPassword(),
             const SizedBox(height: 16.0),
             const Text(
               'Forgot password?',

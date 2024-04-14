@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:thermocall/login/view/inputemail.dart';
+import 'package:thermocall/login/view/inputpassword.dart';
+import 'package:thermocall/login/view/inputrepeatpassword.dart';
 
 import 'login.dart';
 
@@ -22,18 +25,7 @@ class Signup extends StatelessWidget {
             SizedBox(
               height: 16,
             ),
-            TextFormField(
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(
-                  horizontal: 16.0,
-                ),
-                hintText: "Enter your email",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-              ),
-            ),
+            InputEmail(),
             SizedBox(height: 32),
             Text(
               "Create Password",
@@ -43,18 +35,7 @@ class Signup extends StatelessWidget {
             SizedBox(
               height: 16,
             ),
-            TextFormField(
-              obscureText: true,
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
-                hintText: "Enter your password",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                suffixIcon: _buildPasswordVisibilityIcon(),
-              ),
-            ),
+            InputPassword(),
             SizedBox(height: 32),
             Text(
               "Repeat Password",
@@ -64,20 +45,7 @@ class Signup extends StatelessWidget {
             SizedBox(
               height: 16,
             ),
-            TextFormField(
-              obscureText: true,
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(
-                  horizontal: 16.0,
-                ),
-                hintText: "Repeat your password",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                suffixIcon: _buildPasswordVisibilityIcon(),
-              ),
-            ),
+            InputRepeatPassword(),
             SizedBox(height: 32),
             ElevatedButton(
               onPressed: () {},
