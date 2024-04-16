@@ -64,7 +64,7 @@ class Signup extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 100),
+          Spacer(),
 
             Center(
               child: Text(

@@ -27,7 +27,7 @@ class _LoginState extends State<Login> {
         title: const Text('Login'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -82,7 +82,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            const SizedBox(height: 100.0),
+            Spacer(),
             Center(
               child: const Text(
                 "Don't have a account?",
@@ -110,6 +110,9 @@ class _LoginState extends State<Login> {
                   side: const BorderSide(color: Colors.black87, width: 2.0),
                 ),
               ),
+            ),
+            SizedBox(
+              height: 32,
             ),
           ],
         ),
