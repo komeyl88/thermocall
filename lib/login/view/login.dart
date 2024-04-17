@@ -28,7 +28,7 @@ class _LoginState extends State<Login> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            InputEmail(),
+            const InputEmail(),
             const SizedBox(height: 32.0),
             const SizedBox(height: 16.0),
             InputPassword(),
