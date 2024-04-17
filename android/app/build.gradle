@@ -25,6 +25,7 @@ if (flutterVersionName == null) {
 android {
     namespace "com.thermocall.thermocall"
     compileSdkVersion flutter.compileSdkVersion
+    buildToolsVersion "30.0.3"
     ndkVersion flutter.ndkVersion
 
     compileOptions {
