@@ -17,34 +17,10 @@ class Signup extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              "Email",
-              textAlign: TextAlign.left,
-              style: TextStyle(color: Colors.black54),
-            ),
-            SizedBox(
-              height: 16,
-            ),
             InputEmail(),
             SizedBox(height: 32),
-            Text(
-              "Create Password",
-              textAlign: TextAlign.left,
-              style: TextStyle(color: Colors.black54),
-            ),
-            SizedBox(
-              height: 16,
-            ),
             InputPassword(),
             SizedBox(height: 32),
-            Text(
-              "Repeat Password",
-              textAlign: TextAlign.left,
-              style: TextStyle(color: Colors.black54),
-            ),
-            SizedBox(
-              height: 16,
-            ),
             InputRepeatPassword(),
             SizedBox(height: 32),
             ElevatedButton(
