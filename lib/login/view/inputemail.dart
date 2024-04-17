@@ -10,7 +10,7 @@ class InputEmail extends StatefulWidget {
 class _InputEmailState extends State<InputEmail> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Column( //add column
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
