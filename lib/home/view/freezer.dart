@@ -10,7 +10,7 @@ class Freezer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 120, // ارتفاع ثابت برای Container
+      height: 120, // Fixed height for Container
       color: Color(0xFFF1F9FF),
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Column(
@@ -36,7 +36,7 @@ class Freezer extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  foregroundColor: Color(0xFF686868), // تنظیم رنگ متن برای دکمه
+                  foregroundColor: Color(0xFF686868), // Set the text color for the button
                 ),
                 child: Text(
                   "-60",
