@@ -1,55 +1,102 @@
 import 'package:flutter/material.dart';
 
-class Freezer extends StatelessWidget {
-  final String freezerName;
-  final String update;
+class Freezer extends StatefulWidget {
+  final bool isErrorFreeze;
+  final String title;
+  final String lastUpdated;
+  final String minTemperature;
+  final String maxTemperature;
+  final String normalTemperature;
 
-  Freezer({required this.freezerName, required this.update});
+  const Freezer({
+    Key? key,
+    required this.isErrorFreeze,
+    required this.title,
+    required this.lastUpdated,
+    required this.minTemperature,
+    required this.maxTemperature,
+    required this.normalTemperature,
+  }) : super(key: key);
+
+  @override
+  State<Freezer> createState() => _FreezerState();
+}
+
+class _FreezerState extends State<Freezer> {
+  bool get isErrorFreeze => widget.isErrorFreeze;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 120, // Fixed height for Container
-      color: Color(0xFFF1F9FF),
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            freezerName,
-            style: TextStyle(color: Color(0xFF002039), fontSize: 20),
-          ),
-          SizedBox(height: 8),
-          Text(
-            update,
-            style: TextStyle(color: Color(0xFF686868), fontSize: 16),
-          ),
-          SizedBox(height: 8),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: Container(
+          color: isErrorFreeze ? Colors.redAccent : Color(0xF1F9FF),
+          height: 100,
+          child: Row(
             children: [
-              Text(
-                "-65",
-                style: TextStyle(color: Color(0xFF686868), fontSize: 16),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Color(0xFF686868), // Set the text color for the button
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      widget.title,
+                      style: TextStyle(
+                        color: isErrorFreeze ? Colors.white : Color(0xFF002039),
+                        fontSize: 23,
+                      ),
+                    ),
+                    Text(
+                      widget.lastUpdated,
+                      style: TextStyle(
+                        color: isErrorFreeze ? Colors.white : Color(0xFF686868),
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
                 ),
+              ),
+              Spacer(),
+              Padding(
+                padding: const EdgeInsets.only(right: 8.0),
                 child: Text(
-                  "-60",
-                  style: TextStyle(color: Color(0xFF686868), fontSize: 16),
+                  widget.minTemperature,
+                  style: TextStyle(
+                    color: isErrorFreeze ? Colors.white : Color(0xFF686868),
+                  ),
                 ),
               ),
-              Text(
-                "-50",
-                style: TextStyle(color: Color(0xFF686868), fontSize: 16),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(100),
+                child: Container(
+                  height: 55,
+                  width: 55,
+                  color: isErrorFreeze ? Colors.red : Colors.white,
+                  child: Center(
+                    child: Text(
+                      widget.normalTemperature,
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: isErrorFreeze ? Colors.white : Color(0xFF002039),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 8.0, left: 8),
+                child: Text(
+                  widget.maxTemperature,
+                  style: TextStyle(
+                    color: isErrorFreeze ? Colors.white : Color(0xFF686868),
+                  ),
+                ),
               ),
             ],
           ),
-        ],
+        ),
       ),
     );
   }
