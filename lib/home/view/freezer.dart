@@ -32,7 +32,8 @@ class _FreezerState extends State<Freezer> {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: Container(
-          color: isErrorFreeze ? Colors.redAccent : Color(0xF1F9FF),
+          color: isErrorFreeze ? Colors.redAccent : Color(0xFFF1F9FF),
+          // Updated color code
           height: 100,
           child: Row(
             children: [
