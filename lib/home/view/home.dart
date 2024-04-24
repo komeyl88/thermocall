@@ -146,6 +146,7 @@ class _Home_PageState extends State<Home_Page> {
           Icons.add,
           color: Colors.white,
         ),
+        shape: CircleBorder(),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
