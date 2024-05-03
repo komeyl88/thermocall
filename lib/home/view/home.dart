@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:thermocall/home/view/freezer.dart';
 
+import '../../setup/view/setup.dart';
+
 class Home_Page extends StatefulWidget {
   const Home_Page({Key? key});
 
@@ -140,7 +142,12 @@ class _Home_PageState extends State<Home_Page> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SetupPage()),
+          );
+        },
         backgroundColor: Color(0xFF002039),
         child: Icon(
           Icons.add,
