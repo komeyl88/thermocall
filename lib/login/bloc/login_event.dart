@@ -41,4 +41,5 @@ final class _AuthenticationStatusChanged extends AuthenticationEvent {
   const _AuthenticationStatusChanged(this.status);
 
   final AuthenticationStatus status;
+  //
 }
