@@ -92,6 +92,7 @@ class Signup extends StatelessWidget {
       ),
     );
   }
+  //
 }
 
 Widget _buildPasswordVisibilityIcon() {
