@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class InputPassword extends StatefulWidget {
-  const InputPassword({super.key});
+  Function(String) onChange;
+
+  InputPassword({super.key, required this.onChange});
 
   @override
   State<InputPassword> createState() => _InputPasswordState();
@@ -22,6 +24,9 @@ class _InputPasswordState extends State<InputPassword> {
           height: 16,
         ),
         TextFormField(
+          onChanged: (value) {
+            widget.onChange(value);
+          },
           obscureText: true,
           decoration: InputDecoration(
               contentPadding: EdgeInsets.symmetric(horizontal: 16.0),

@@ -17,9 +17,13 @@ class Signup extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            InputEmail(),
+            InputEmail(
+              onChange: (String) {},
+            ),
             SizedBox(height: 32),
-            InputPassword(),
+            InputPassword(
+              onChange: (String) {},
+            ),
             SizedBox(height: 32),
             InputRepeatPassword(),
             SizedBox(height: 32),
@@ -53,7 +57,7 @@ class Signup extends StatelessWidget {
 
             ElevatedButton(
               onPressed: () async {
-                final result = await Navigator.push(
+                final result = await Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const Login(),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class InputEmail extends StatefulWidget {
-  const InputEmail({Key? key}) : super(key: key);
+  Function(String) onChange;
+
+  InputEmail({super.key, required this.onChange});
 
   @override
   State<InputEmail> createState() => _InputEmailState();
@@ -10,7 +12,8 @@ class InputEmail extends StatefulWidget {
 class _InputEmailState extends State<InputEmail> {
   @override
   Widget build(BuildContext context) {
-    return Column( //add column
+    return Column(
+      //add column
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
@@ -22,6 +25,9 @@ class _InputEmailState extends State<InputEmail> {
           height: 16,
         ),
         TextFormField(
+          onChanged: (value) {
+            widget.onChange(value);
+          },
           decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(
               horizontal: 16.0,
