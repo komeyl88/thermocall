@@ -16,5 +16,6 @@ final class LoginState extends Equatable {
 
   @override
   List<Object> get props => [username, password];
+  //
 }
 
