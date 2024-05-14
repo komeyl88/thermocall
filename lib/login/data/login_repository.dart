@@ -20,6 +20,7 @@ class AuthenticationRepository {
       const Duration(milliseconds: 300),
           () => _controller.add(AuthenticationStatus.authenticated),
     );
+    //
   }
 
   void logOut() {
