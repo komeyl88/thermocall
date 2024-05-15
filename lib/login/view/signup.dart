@@ -57,12 +57,13 @@ class Signup extends StatelessWidget {
 
             ElevatedButton(
               onPressed: () async {
-                final result = await Navigator.pushReplacement(
+                final result = await Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const Login(),
                   ),
                 );
+
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
