@@ -13,14 +13,23 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     LoginUsernameChanged event,
     Emitter<LoginState> emit,
   ) {
-    emit(LoginState(username: event.username));
+    final oldstatus = state.status;
+    final oldpassword = state.password;
+    final newusername = event.username;
+
+    emit(LoginState(
+        username: newusername, password: oldpassword, status: oldstatus));
   }
 
   void _onPasswordChanged(
     LoginPasswordChanged event,
     Emitter<LoginState> emit,
   ) {
-    emit(LoginState(password: event.password));
+    final oldstatus = state.status;
+    final newpassword = event.password;
+    final oldusername = state.username;
+    emit(LoginState(
+        username: oldusername, password: newpassword, status: oldstatus));
   }
 
   void _onSubmitted(
