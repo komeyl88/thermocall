@@ -25,11 +25,11 @@ class _LoginState extends State<Login> {
           if (state.status == true) {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Home_Page()),
+              MaterialPageRoute(builder: (context) => const Home_Page()),
             );
           } else if (state.status == false) {
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
+              const SnackBar(
                 content: Text('Login failed!'),
                 backgroundColor: Colors.red,
               ),
@@ -70,15 +70,8 @@ class _LoginState extends State<Login> {
                   const SizedBox(height: 32.0),
                   ElevatedButton(
                     onPressed: () {
-                      context.read<LoginBloc>().add(LoginSubmitted());
+                      context.read<LoginBloc>().add(const LoginSubmitted());
                     },
-                    child: const Text(
-                      'Login',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black87,
                       minimumSize: const Size(double.infinity, 60.0),
@@ -86,10 +79,17 @@ class _LoginState extends State<Login> {
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                     ),
-                  ),
-                  Spacer(),
-                  Center(
                     child: const Text(
+                      'Login',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  const Spacer(),
+                  const Center(
+                    child: Text(
                       "Don't have an account?",
                       style: TextStyle(color: Colors.black54),
                     ),
@@ -99,16 +99,9 @@ class _LoginState extends State<Login> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Signup()),
+                        MaterialPageRoute(builder: (context) => const Signup()),
                       );
                     },
-                    child: const Text(
-                      "Register",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
                       minimumSize: const Size(double.infinity, 60.0),
@@ -116,6 +109,13 @@ class _LoginState extends State<Login> {
                         borderRadius: BorderRadius.circular(10.0),
                         side:
                         const BorderSide(color: Colors.black87, width: 2.0),
+                      ),
+                    ),
+                    child: const Text(
+                      "Register",
+                      style: TextStyle(
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
