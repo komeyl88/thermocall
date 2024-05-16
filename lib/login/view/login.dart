@@ -36,10 +36,9 @@ class _LoginState extends State<Login> {
             );
           }
         },
-        child: SingleChildScrollView(
-          child: Scaffold(
-            body: Padding(
-              padding: const EdgeInsets.all(16.0),
+        child: Scaffold(
+          body: Padding(
+            padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -87,10 +86,12 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                   ),
-                  const Spacer(),
-                  const Center(
-                    child: Text(
-                      "Don't have an account?",
+                SizedBox(
+                  height: 480,
+                ),
+                const Center(
+                  child: Text(
+                    "Don't have an account?",
                       style: TextStyle(color: Colors.black54),
                     ),
                   ),
@@ -125,7 +126,6 @@ class _LoginState extends State<Login> {
             ),
           ),
         ),
-      ),
     );
   }
   //
