@@ -1,6 +1,6 @@
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:thermocall/home/view/freezer.dart';
-
 import '../../setup/view/setup.dart';
 
 class Home_Page extends StatefulWidget {
@@ -12,6 +12,11 @@ class Home_Page extends StatefulWidget {
 
 class _Home_PageState extends State<Home_Page> {
   int _selectedIndex = 0;
+
+  final List<IconData> iconList = [
+    Icons.home,
+    Icons.account_circle_outlined,
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -91,55 +96,21 @@ class _Home_PageState extends State<Home_Page> {
           ),
         ),
       ),
-      bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-        child: BottomAppBar(
-          color: Colors.white,
-          elevation: 10,
-          child: Container(
-            height: 80,
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                InkWell(
-                  onTap: () {
-                    setState(() {
-                      _selectedIndex = 0;
-                    });
-                  },
-                  child: AnimatedContainer(
-                    duration: Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                    child: Icon(
-                      Icons.home,
-                      color:
-                          _selectedIndex == 0 ? Color(0xFF002039) : Colors.grey,
-                      size: 38,
-                    ),
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    setState(() {
-                      _selectedIndex = 1;
-                    });
-                  },
-                  child: AnimatedContainer(
-                    duration: Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                    child: Icon(
-                      Icons.account_circle_outlined,
-                      color:
-                          _selectedIndex == 1 ? Color(0xFF002039) : Colors.grey,
-                      size: 38,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+      bottomNavigationBar: AnimatedBottomNavigationBar(
+        icons: iconList,
+        activeIndex: _selectedIndex,
+        gapLocation: GapLocation.center,
+        notchSmoothness: NotchSmoothness.softEdge,
+        onTap: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+        activeColor: Color(0xFF002039),
+        inactiveColor: Colors.grey,
+        iconSize: 38,
+        backgroundColor: Colors.white,
+        borderColor: Colors.black12,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
